@@ -1,31 +1,39 @@
-(function(){
-	'use strict';
-	
-	var url = ""
-	
-	fetchJSONP(url, function(data) {
-		var products= data.results;
-		console.log(products);
-		var categories = extractCategories(products);
-		listCategories(categories);
-	});
-	
-	function listCategories(categories) {
-		_.each(categories), function(cat)
-		console.log(cat);
-	});
-	
-}
+var _ = require('underscore');
+var items = require('./items.json');
+var total = _.pluck(items, 'price');
 
-	function extractCategories(products) {
-		return _.chain(products
-		.map(function(item){
-			return item.category_path;
-		})
-		.flatten()
-		.uniq()
-		.value();
-	}
-	
-	function fetchJSONP(url, callback) {}
-})();
+_.each(items, function(item) {
+});
+
+//Question 1
+var sum = total.reduce(function(a, b){
+	return (a+b);
+});
+console.log
+console.log("The average price is $" + (sum/items.length).toFixed(2));
+
+//Question 2
+
+
+//Question 3
+
+
+//Question 4
+
+
+//Question 5
+
+
+//Question 6
+
+
+//Question 7
+
+
+//Question 8
+
+
+//Question 9
+
+
+//Question 10
